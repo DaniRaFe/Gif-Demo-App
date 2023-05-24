@@ -1,16 +1,13 @@
-import React from "react";
 import CategoriesList from "./CategoriesList";
 import CategoryInput from "./CategoryInput";
+
 const Categories = ({categories = [], setCategories}) => {
     return (
         <div>
-            <CategoryInput
-            categories={categories}
-            setCategories={setCategories}
+            <CategoryInput categories={categories} setCategories={setCategories}
             />
         <br/>
-        <CategoriesList
-        categories={categories}
+        <CategoriesList categories={categories} setCategories={setCategories}
         />
     </div>
     )

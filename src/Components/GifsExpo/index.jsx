@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 const GifsExpo = ({categories = []}) => {
-    const [urlList, setUrlList] = useState([])
+    const [urlList, SetUrlList] = useState([])
 
     const getGifs = async (categories) => {
         
@@ -18,13 +18,14 @@ const GifsExpo = ({categories = []}) => {
         }))
 
         let gifsList = []
+
         responseList.forEach((data) => {
             data.forEach((item) =>{
-                gifsList = [...gifsList, item.images.fixed_width.url]
+                gifsList = [...gifsList, item.images.fixed_width.url.split('?')[0]]
             })
         })
 
-        SpeechRecognitionResultList([...gifsList])
+        SetUrlList([...gifsList])
         
     }
 
@@ -32,17 +33,16 @@ const GifsExpo = ({categories = []}) => {
 
     return (
         <>
-        <h4>GifsExpo</h4>
-        <ol>
+        <div>
             {
                 urlList.map((url) => {
                 return (
-                    <li key={url}>{url}</li>
+                    <img key={url} src={url}/>
                 )
             })
 
             }
-        </ol>
+        </div>
         </>
     )
 }
