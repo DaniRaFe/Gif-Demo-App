@@ -1,3 +1,4 @@
+import React from "react";
 import CategoriesList from "./CategoriesList";
 import CategoryInput from "./CategoryInput";
 

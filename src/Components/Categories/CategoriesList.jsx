@@ -2,8 +2,8 @@ const CategoriesList =({categories = [], setCategories}) => {
     const deleteCategory = (category) => {
         const newList = categories.filter((cat) => cat !== category)
         setCategories([...newList])
-
     }
+    
     return (
         <ol>
         {
